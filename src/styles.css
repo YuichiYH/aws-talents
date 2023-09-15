@@ -154,14 +154,16 @@ main{
 }
 
 .slider{
+    visibility: hidden;
     opacity: 0;
-    transition: opacity .2s;
-    position: absolute;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
     width: 100%;
     border-radius: 10px;
+    margin: 50px auto;
 }
 
 .on{
+    visibility: visible;
     opacity: 1;
 }
 
@@ -187,7 +189,6 @@ footer{
     background-color: #FFFFFF;
     height: 288px;
     width: 100%;
-
 }
 
 .box-grid-footer{
