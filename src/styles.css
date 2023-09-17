@@ -1,12 +1,27 @@
 @font-face {
     font-family: AmazonEmber;
     src: url(./fonts/AmazonEmber_Bd.ttf);
+    src: url(./fonts/AmazonEmber_Rg.ttf);
+}
+
+@font-face {
+    font-family: Abel;
+    src: url(./fonts/Abel-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body{
@@ -41,11 +56,68 @@ header{
     margin: 0 auto;
 }
 
-.banner img{
-    display: flex;
+.banner{
+    display: grid;
+    grid-template-columns: auto 33.75%;
     align-content: center;
-    margin-top: 90px;
-    margin-bottom: 90px;
+    margin: 90px auto;
+}
+
+.banner-box {
+    border-radius: 50px 0px 0px 50px;
+    background-color: #e47911;
+}
+
+.banner-main-text {
+    margin-top: 35px;
+    margin-left: 50px;
+    color: #FFF;
+    font-family: AmazonEmber;
+    font-size: 96px;
+    font-weight: bolder;
+    line-height: 109.3%; /* 104.928px */
+}
+
+.banner-desc-text {
+    margin-top: 35px;
+    margin-left: 50px;
+    margin-right: 240px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; 
+}
+
+.button-flex {
+    display: flex;
+}
+
+.banner-button {
+    border-radius: 30px;
+    background: #232F3E;
+    width: 357.861px;
+    height: 83.693px;
+    text-decoration: none;
+    margin: 50px auto;
+}
+
+.button-text {
+    margin-top: 10px;
+    color: #FFF;
+    text-align: center;
+    font-family: AmazonEmber;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+.banner-img {
+    border-radius: 0px 50px 50px 0px;
+    height: 687px;
 }
 
 .talentos{
@@ -82,14 +154,16 @@ main{
 }
 
 .slider{
+    visibility: hidden;
     opacity: 0;
-    transition: opacity .2s;
-    position: absolute;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
     width: 100%;
     border-radius: 10px;
+    margin: 50px auto;
 }
 
 .on{
+    visibility: visible;
     opacity: 1;
 }
 
@@ -109,4 +183,70 @@ main{
 
 #prev-button{
     transform: rotate(180deg);
+}
+
+footer{
+    background-color: #FFFFFF;
+    height: 288px;
+    width: 100%;
+}
+
+.box-grid-footer{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-footer{
+    display: flex;
+}
+
+.logo-footer img{
+    width: 108px;
+    height: 62px;
+    margin-top: 50px;
+}
+
+.logo-footer h2{
+    font-family: AmazonEmber;
+    color: #232F3E;
+    font-size: 40px;
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.footer{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 700px;
+    margin-top: 60px;
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.itens-footer ul li a{
+    font-family: AmazonEmber;
+    text-decoration: none;
+    color: #232f3e;
+    opacity: 72%;
+}
+
+ul li a:hover{
+    color: #E47911;
+}
+
+hr{
+    width: 1200px;
+    color: #232F3E;
+    opacity: 50%;
+    margin-top: 20px;
+}
+
+p{
+    font-family: AmazonEmber;
+    color: #232F3E;
+    opacity: 72%;
+    font-weight: 100;
+    margin-top: 25px;
+    margin-left: 410px;
 }

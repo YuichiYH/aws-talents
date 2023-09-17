@@ -1,36 +1,35 @@
-const slider = document.querySelectorAll('.slider');
+const cvs = ["./public/images/Emily.png", "./public/images/Jennifer.png", "./public/images/Moises.png", "./public/images/Wilson.png", "./public/images/Yuichi.png"];
+const slider = document.querySelector('.slider');
 const btnPrev = document.getElementById('prev-button');
 const btnNext = document.getElementById('next-button');
 
 let currentSlide = 0;
 
 function hideSlider(){
-    slider.forEach(item => item.classList.remove('on'))
+    slider.classList.remove('on')
 }
 
 function showSlider(){
-    slider[currentSlide].classList.add('on')
+    slider.classList.add('on')
 }
 
 function nextSlider(){
     hideSlider()
-    if(currentSlide == slider.length -1) {
-        currentSlide = 0
-    } else {
-        currentSlide++
-    }
-    showSlider()
+
+    currentSlide++
 }
 
 function prevSlider(){
     hideSlider()
-    if(currentSlide == 0) {
-        currentSlide = slider.length -1
-    } else {
-        currentSlide--
-    }
-    showSlider()
+
+    currentSlide--
 }
+
+slider.addEventListener("transitionend", () => {
+    slider.src = cvs[(((currentSlide) % 5) + 5) % 5]
+
+    showSlider()
+})
 
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
